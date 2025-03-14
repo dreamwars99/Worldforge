@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Conflict Analyzer</title>
+</head>
+<body>
+    <h1>캐릭터 갈등 분석기</h1>
+    <form method="POST" action="/">  <!-- action 속성 변경 -->
+        <div>
+            <label for="character1_description">캐릭터 1 설명:</label><br>
+            <textarea id="character1_description" name="character1_description" rows="4" cols="50"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="character2_description">캐릭터 2 설명:</label><br>
+            <textarea id="character2_description" name="character2_description" rows="4" cols="50"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="max_tokens">최대 토큰 수:</label><br>
+            <input type="number" id="max_tokens" name="max_tokens" value="150" min="1" max="4096">
+        </div>
+        <br>
+        <div>
+            <label for="temperature">Temperature:</label><br>
+            <input type="number" id="temperature" name="temperature" value="0.7" min="0" max="2" step="0.1">
+        </div>
+        <br>
+        <button type="submit">분석하기</button>
+    </form>
+
+    {% if analysis %}
+        <h2>분석 결과:</h2>
+        <p>{{ analysis }}</p>
+    {% endif %}
+
+    {% if error %}
+        <h2>오류:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
