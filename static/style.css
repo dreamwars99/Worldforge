@@ -40,46 +40,47 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh; /* Make sure it takes up most of the viewport */
+    min-height: 50vh;
 }
 
 /* Button Container */
 .button-container {
     display: flex;
-    flex-direction: row; /* Horizontal layout */
-    align-items: center; /* Center buttons horizontally */
-    gap: 1.5rem; /* Spacing between buttons */
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
 }
-.button-option{
-  position: relative; /* Make the button-option the positioning context */
-  display: inline-block; /* Needed for the tooltip to position correctly */
+
+.button-option {
+    position: relative;
+    display: inline-block;
 }
 
 /* Button Style */
 .button {
-    display: inline-flex; /* Use flexbox for centering */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 1rem 2rem;
-    background-color: #007bff; /* Blue */
+    background-color: #007bff;
     color: #fff;
     text-decoration: none;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
-    border: none; /* Remove default button border */
+    border: none;
     cursor: pointer;
     width: 250px;
     text-align: center;
 }
 
 .button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 /* Tooltip Styles */
 .tooltip {
-    visibility: hidden; /* Hidden by default */
+    visibility: hidden;
     width: 260px;
     background-color: #555;
     color: #fff;
@@ -88,9 +89,9 @@ main {
     padding: 8px;
     position: absolute;
     z-index: 1;
-    bottom: -45px; /* Position below the button */
+    bottom: -45px;
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%);
     opacity: 0;
     transition: opacity: 0.3s;
 }
@@ -99,7 +100,8 @@ main {
     visibility: visible;
     opacity: 1;
 }
-footer{
+
+footer {
     text-align: center;
     position: relative;
     bottom: 0;
@@ -109,15 +111,14 @@ footer{
     background-color: #222;
     color: #fff;
 }
-/* 이미지 스타일 */
+
+/* Image Styles */
 .button-image {
-    /* width: 50px;
-    height: 50px; */ /* 제거 또는 주석 처리 */
-    max-width: 100%;  /* 이미지가 버튼 영역을 벗어나지 않도록 */
-    max-height: 100px; /* 최대 높이 제한 (원하는 값으로 조절) */
-    object-fit: contain; /* 추가: 이미지 비율 유지하면서 영역에 맞춤 */
-    margin-right: 10px; /* 텍스트와의 간격 */
-    vertical-align: middle; /* 텍스트와 이미지 수직 중앙 정렬 */
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .character-form {
@@ -138,17 +139,18 @@ footer{
     background-color: #f9f9f9;
     border-radius: 8px;
 }
-/* Basic styling for form elements to make them look better. */
+
+/* Basic styling for form elements */
 input[type="text"],
 textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical; /* Allow vertical resizing of textareas */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
 }
 
 .worldbuilding-results {
@@ -166,36 +168,31 @@ textarea {
     margin-top: 0;
     color: #007bff;
 }
-textarea#imagination_input{
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      resize: vertical; /* Allow vertical resizing of textareas */
+
+textarea#imagination_input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
 }
-    /* Left and Right Panel Layout */
 
-
+/* Left and Right Panel Layout */
 .left-panel {
-    width: 20%; /* Adjust width as needed */
+    width: 20%;
     border-right: 1px solid #ccc;
     padding: 10px;
 }
 
 .right-panel {
-    width: 80%; /* Adjust width as needed */
+    width: 80%;
     padding: 10px;
 }
 
-/* Basic Styling for Character Creation Form */
-.character-form {
-    margin-bottom: 20px;
-}
-
-.story-weaving-result{
+.story-weaving-result {
     margin-top: 30px;
     border: 1px solid #ddd;
     padding: 15px;
