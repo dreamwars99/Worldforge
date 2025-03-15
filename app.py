@@ -1,56 +1,108 @@
-from dotenv import load_dotenv
-load_dotenv()
-
+from flask import Flask, render_template, request, redirect, url_for
 import os
-from flask import Flask, render_template, request
 from openai import AzureOpenAI
+from dotenv import load_dotenv
+import json
+
+load_dotenv()
 
 app = Flask(__name__)
 
-# Azure OpenAI 설정 (환경 변수 사용)
+# Azure OpenAI setup (using environment variables)
 client = AzureOpenAI(
   azure_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT"),
   api_key=os.environ.get("AZURE_OPENAI_KEY"),
   api_version=os.environ.get("AZURE_OPENAI_API_VERSION")
 )
 
-def generate_conflict_analysis(character1_description, character2_description, max_tokens, temperature):
-    """
-    Azure OpenAI Service를 사용하여 두 캐릭터 간의 갈등 분석을 생성합니다.
-    """
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": "You are a creative writing assistant specializing in character interactions. Given the following two character descriptions, suggest a single, compelling scenario where these characters would come into conflict or have a significant interaction. Focus on highlighting their contrasting motivations and personalities."}, # Concise response instruction removed from system message
-                {"role": "user", "content": f"Character 1: {character1_description}\nCharacter 2: {character2_description}"}
-            ],
-            max_tokens=max_tokens,  # 사용자 지정 max_tokens 사용
-            n=1,
-            stop=None,
-            temperature=temperature,  # 사용자 지정 temperature 사용
-        )
-        return response.choices[0].message.content.strip()
-    except Exception as e:
-        return f"Error: {e}"
+# --- Story Weaving Function ---
+def generate_story_weaving(char_name, char_description, char_motivation, plot_point):
+    prompt = f"""You are a seasoned story editor. Given the following character:
 
-@app.route("/", methods=["GET", "POST"]) # GET 요청도 처리하도록 변경
+Name: {char_name}
+Description: {char_description}
+Motivation: {char_motivation}
+
+and the following plot point:
+
+{plot_point}
+
+Suggest three ways these elements could be connected in a compelling narrative. Focus on creating conflict and raising the stakes.
+"""
+    response = client.chat.completions.create(
+        model=os.environ.get("AZURE_OPENAI_MODEL_NAME"),
+        messages=[
+            {"role": "system", "content": "You are a helpful storytelling assistant."},
+            {"role": "user", "content": prompt},
+        ]
+    )
+    return response.choices[0].message.content
+
+@app.route("/")
 def index():
-    analysis = None # 분석 결과를 저장할 변수 초기화
-    error = None
+    return render_template("index.html")
 
+@app.route("/new_project")
+def new_project():
+    #  For now, just redirect to a simple character creation page
+    return redirect(url_for('create_character')) # We'll define this later
+
+@app.route("/chartflow")
+def chartflow():
+    return render_template("chart_flow.html")  # Create this template later
+
+@app.route('/example')
+def example():
+    return "Avartar Example is here. We will create this page later"
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/help')
+def help():
+    return render_template("help.html")
+
+# --- Start from Imagination Route ---
+@app.route("/start_from_imagination", methods=["GET", "POST"])
+def start_from_imagination():
+    mode = request.args.get('mode', 'default')  # Get mode from query parameter
+    story_weaving_result = None
+    character = None
     if request.method == "POST":
-        character1_description = request.form["character1_description"]
-        character2_description = request.form["character2_description"]
-        max_tokens = int(request.form["max_tokens"])  # 문자열을 정수로 변환
-        temperature = float(request.form["temperature"])  # 문자열을 실수로 변환
+        if request.form['mode'] == 'create':
+            char_name = request.form["char_name"]
+            char_description = request.form["char_description"]
+            char_motivation = request.form["char_motivation"]
+            # Basic Data Storage
+            character_data = {
+              "name": char_name,
+              "description": char_description,
+              "motivation": char_motivation
+            }
 
-        try:
-            analysis = generate_conflict_analysis(character1_description, character2_description, max_tokens, temperature)
-        except Exception as e:
-            error = str(e)
+            if not os.path.exists('projects'):
+              os.makedirs('projects')
 
-    return render_template("index.html", analysis=analysis, error=error) # 결과와 오류를 템플릿에 전달
+            with open("projects/character_data.json", "w") as f:
+                json.dump(character_data, f, indent=4)
+            # Prepare for story weaving
+            mode = "weave"
+            character = character_data
 
-if __name__ == '__main__':
+        elif request.form['mode'] == 'weave' or request.form['mode'] == 'avatar_weave':
+            char_name = request.form["char_name"]
+            char_description = request.form["char_description"]
+            char_motivation = request.form["char_motivation"]
+            plot_point = request.form["plot_point"]
+            story_weaving_result = generate_story_weaving(char_name, char_description, char_motivation, plot_point)
+
+    return render_template("start_from_imagination.html", mode=mode, story_weaving_result=story_weaving_result, character=character)
+
+# --- Placeholder routes for later ---
+@app.route("/create_character", methods=["GET", "POST"])
+def create_character():
+    return "Character creation page - to be implemented"
+
+if __name__ == "__main__":
     app.run(debug=True)

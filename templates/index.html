@@ -1,42 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Character Conflict Analyzer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldForge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>캐릭터 갈등 분석기</h1>
-    <form method="POST" action="/">  <!-- action 속성 변경 -->
-        <div>
-            <label for="character1_description">캐릭터 1 설명:</label><br>
-            <textarea id="character1_description" name="character1_description" rows="4" cols="50"></textarea>
-        </div>
-        <br>
-        <div>
-            <label for="character2_description">캐릭터 2 설명:</label><br>
-            <textarea id="character2_description" name="character2_description" rows="4" cols="50"></textarea>
-        </div>
-        <br>
-        <div>
-            <label for="max_tokens">최대 토큰 수:</label><br>
-            <input type="number" id="max_tokens" name="max_tokens" value="150" min="1" max="4096">
-        </div>
-        <br>
-        <div>
-            <label for="temperature">Temperature:</label><br>
-            <input type="number" id="temperature" name="temperature" value="0.7" min="0" max="2" step="0.1">
-        </div>
-        <br>
-        <button type="submit">분석하기</button>
-    </form>
+    <header>
+        <nav>
+            <a href="/"><h1>WorldForge</h1></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    {% if analysis %}
-        <h2>분석 결과:</h2>
-        <p>{{ analysis }}</p>
-    {% endif %}
+    <main>
+        <section id="hero">
+            <h2>Choose Your Path</h2>
+            <div class="button-container">
+                <div class="button-option">
+                    <a href="/new_project" class="button">
+                        <img src="{{ url_for('static', filename='images/white_book.png') }}" alt="New Project" class="button-image">
+                        New Project
+                    </a>
+                    <span class="tooltip">Create a new project from scratch.</span>
+                </div>
+                <div class="button-option">
+                    <a href="/chartflow" class="button">
+                        <img src="{{ url_for('static', filename='images/node.png') }}" alt="Chartflow" class="button-image">
+                        Chartflow - Step by Step
+                    </a>
+                    <span class="tooltip">Build your story gradually with AI guidance.</span>
+                </div>
+                <div class="button-option">
+                    <a href="/start_from_imagination" class="button">
+                        <img src="{{ url_for('static', filename='images/bulb.png') }}" alt="Start from Imagination" class="button-image">
+                        Start from Imagination
+                    </a>
+                    <span class="tooltip">Create a vast story from a single spark.</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    {% if error %}
-        <h2>오류:</h2>
-        <p>{{ error }}</p>
-    {% endif %}
+    <footer>
+        <p>© 2025 WorldForge</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
 </body>
 </html>
+/* ... (your existing styles) ... */
+
+.worldbuilding-results {
+    margin-top: 30px;
+}
+
+.worldbuilding-element {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.worldbuilding-element h4 {
+    margin-top: 0;
+    color: #007bff; /* Or your preferred color */
+}
+textarea#imagination_input{
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical; /* Allow vertical resizing of textareas */
+}
