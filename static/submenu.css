@@ -1,0 +1,184 @@
+/* Submenu System Styles for WorldForge */
+
+/* Submenu Panel Styling */
+.submenu-panel {
+    width: 0;
+    background-color: var(--panel-bg);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+.submenu-panel.active {
+    width: 250px;
+}
+
+.submenu-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.submenu-header h3 {
+    margin-bottom: 0.5rem;
+}
+
+.submenu-list {
+    list-style: none;
+}
+
+.submenu-item {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.submenu-item:hover {
+    background-color: var(--hover-color);
+}
+
+.submenu-item.active {
+    background-color: var(--active-color);
+    font-weight: bold;
+}
+
+/* Workspace Form Styling */
+.workspace-form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.ai-generate-btn,
+.save-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.ai-generate-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ai-generate-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.save-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #27ae60;
+}
+
+.ai-generate-btn i,
+.save-btn i {
+    margin-right: 0.5rem;
+}
+
+.placeholder-message {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Specific Submenu Content Styling */
+.geography-form {
+    max-width: 800px;
+}
+
+.terrain-list {
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.terrain-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--panel-bg);
+}
+
+.terrain-item:last-child {
+    border-bottom: none;
+}
+
+.terrain-item h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.terrain-item p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.terrain-item .terrain-actions {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terrain-item .terrain-actions button {
+    padding: 0.3rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.terrain-item .edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.terrain-item .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Animation for submenu panel */
+@keyframes slideIn {
+    from { width: 0; }
+    to { width: 250px; }
+}
+
+.submenu-panel.animate {
+    animation: slideIn 0.3s forwards;
+}

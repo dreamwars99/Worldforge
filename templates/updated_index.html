@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldForge - AI Storytelling Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='submenu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu_categories.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="https://via.placeholder.com/40" alt="WorldForge Logo">
+                <span class="logo-text">WorldForge</span>
+            </div>
+            
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <span class="menu-category-label">Mode</span>
+                    <button id="forge-new-world" class="btn"><i class="fas fa-plus-circle"></i> Forge New World</button>
+                    <button id="story-architect" class="btn"><i class="fas fa-drafting-compass"></i> Story Architect</button>
+                    <button id="start-imagination" class="btn"><i class="fas fa-lightbulb"></i> Start from Imagination</button>
+                </div>
+                
+                <div class="menu-category">
+                    <span class="menu-category-label">Project</span>
+                    <button id="load-project" class="btn"><i class="fas fa-folder-open"></i> Load Project</button>
+                    <button id="save-project" class="btn"><i class="fas fa-save"></i> Save Project</button>
+                    <button id="ai-analysis" class="btn"><i class="fas fa-brain"></i> AI Analysis</button>
+                </div>
+                
+                <div class="menu-category">
+                    <span class="menu-category-label">Special</span>
+                    <button id="story-weaving" class="btn"><i class="fas fa-magic"></i> Story Weaving</button>
+                </div>
+            </div>
+            
+            <div class="language-selector">
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="ko">한국어</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Sidebar - Elementals -->
+            <div class="sidebar">
+                <div class="elemental-item active" data-elemental="concept">
+                    <i class="fas fa-lightbulb"></i> <span>Concept</span>
+                </div>
+                <div class="elemental-item" data-elemental="worldview">
+                    <i class="fas fa-globe"></i> <span>Worldview</span>
+                </div>
+                <div class="elemental-item" data-elemental="time">
+                    <i class="fas fa-clock"></i> <span>Time</span>
+                </div>
+                <div class="elemental-item" data-elemental="space">
+                    <i class="fas fa-map-marked-alt"></i> <span>Space</span>
+                </div>
+                <div class="elemental-item" data-elemental="creatures">
+                    <i class="fas fa-dragon"></i> <span>Creatures</span>
+                </div>
+                <div class="elemental-item" data-elemental="characters">
+                    <i class="fas fa-user"></i> <span>Characters</span>
+                </div>
+                <div class="elemental-item" data-elemental="rules">
+                    <i class="fas fa-gavel"></i> <span>Rules</span>
+                </div>
+                <div class="elemental-item" data-elemental="nature">
+                    <i class="fas fa-leaf"></i> <span>Nature</span>
+                </div>
+                <div class="elemental-item" data-elemental="culture">
+                    <i class="fas fa-theater-masks"></i> <span>Culture</span>
+                </div>
+                <div class="elemental-item" data-elemental="language">
+                    <i class="fas fa-language"></i> <span>Language</span>
+                </div>
+                <div class="elemental-item" data-elemental="mythology-religion">
+                    <i class="fas fa-pray"></i> <span>Mythology/Religion</span>
+                </div>
+                <div class="elemental-item" data-elemental="philosophy">
+                    <i class="fas fa-brain"></i> <span>Philosophy</span>
+                </div>
+                <div class="elemental-item" data-elemental="tone-manner">
+                    <i class="fas fa-music"></i> <span>Tone & Manner</span>
+                </div>
+                <div class="elemental-item" data-elemental="story-plot">
+                    <i class="fas fa-book"></i> <span>Story/Plot</span>
+                </div>
+            </div>
+            
+            <!-- Submenu Panel -->
+            <div class="submenu-panel">
+                <!-- Submenu content will be dynamically loaded here -->
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Elemental Workspace -->
+                <div class="elemental-workspace">
+                    <div class="default-message">
+                        <h2>Select an elemental from the left sidebar to begin crafting your world.</h2>
+                        <p>Start writing your story here...</p>
+                    </div>
+                </div>
+                
+                <!-- Story Editor -->
+                <div class="story-editor">
+                    <textarea id="story-text" placeholder="Start writing your story here..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Right Sidebar - AI Assistant -->
+            <div class="assistant-panel">
+                <div class="assistant-header">
+                    <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+                </div>
+                <div class="assistant-content">
+                    <div class="assistant-message">
+                        <p>Welcome to WorldForge! I'm your AI assistant. I'll help you create and develop your story world.</p>
+                        <p>Select a tool from the left sidebar or use one of the top menu options to get started.</p>
+                    </div>
+                    <div class="assistant-input">
+                        <textarea id="assistant-prompt" placeholder="Ask me anything..."></textarea>
+                        <button id="send-prompt"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript Files -->
+    <script src="{{ url_for('static', filename='translations.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='submenu.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* 
+ * Worldforge - Simple Submenu Layout
+ * Standalone CSS for submenu panel
+ */
+
+/* Main layout container */
+.main-content {
+    display: flex;
+    height: 100%;
+}
+
+/* Left sidebar */
+.left-sidebar {
+    width: 180px;
+    background-color: #f0f0f5;
+    border-right: 1px solid #ddd;
+}
+
+/* Submenu panel - always visible */
+.submenu-panel {
+    width: 250px;
+    height: 100%;
+    background-color: #e8e8f0; /* Slightly darker than left sidebar */
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+/* Submenu header */
+.submenu-header {
+    padding: 15px;
+    background-color: #6a5acd;
+    color: white;
+    text-align: center;
+}
+
+.submenu-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.submenu-description {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Submenu items container */
+.submenu-items {
+    padding: 15px;
+}
+
+/* Individual submenu item */
+.submenu-item {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.submenu-item:hover {
+    background-color: #f0f0ff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Central area */
+.central-area {
+    flex: 1;
+    background-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .left-sidebar, .submenu-panel {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+}

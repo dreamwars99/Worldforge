@@ -1,0 +1,5 @@
+# Worldforge - AI-assisted Storytelling Tool
+
+This is a configuration file for deploying the Worldforge application to Heroku.
+
+runtime: python-3.10.12

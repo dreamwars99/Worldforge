@@ -1,0 +1,549 @@
+{
+  "en": {
+    "top_navigation": {
+      "worldforge": "WorldForge",
+      "forge_new_world": "Forge New World",
+      "story_architect": "Story Architect",
+      "start_from_imagination": "Start from Imagination",
+      "load_project": "Load Project",
+      "save_project": "Save Project",
+      "intermediate_save": "AI Analysis",
+      "story_weaving": "Story Weaving"
+    },
+    "categories": {
+      "mode": "Mode",
+      "project_management": "Project Management",
+      "special_function": "Special Function"
+    },
+    "elementals": {
+      "concept": "Concept",
+      "worldview": "Worldview",
+      "time": "Time",
+      "space": "Space",
+      "creatures": "Creatures",
+      "characters": "Characters",
+      "rules": "Rules",
+      "nature": "Nature",
+      "culture": "Culture",
+      "language": "Language",
+      "mythology_religion": "Mythology/Religion",
+      "philosophy": "Philosophy",
+      "tone_manner": "Tone & Manner",
+      "story_plot": "Story/Plot"
+    },
+    "ai_assistant": {
+      "title": "AI Assistant",
+      "welcome_message": "Welcome to WorldForge! I'm your AI assistant. I'll help you create and develop your story world.",
+      "get_started": "Select a tool from the left sidebar or use one of the top menu options to get started.",
+      "ask_anything": "Ask me anything..."
+    },
+    "common_ui": {
+      "save": "Save",
+      "generate_with_ai": "Generate with AI",
+      "edit": "Edit",
+      "delete": "Delete",
+      "start_writing": "Start writing your story here...",
+      "select_elemental": "Select an elemental from the left sidebar to begin crafting your world."
+    },
+    "submenu_headers": {
+      "concept": {
+        "header": "Concept",
+        "description": "Define the foundational ideas of your world"
+      },
+      "worldview": {
+        "header": "Worldview",
+        "description": "Define the philosophical underpinnings of your world"
+      },
+      "time": {
+        "header": "Time",
+        "description": "Define the temporal aspects of your world"
+      },
+      "space": {
+        "header": "Space",
+        "description": "Create the geographical and spatial elements of your world"
+      },
+      "creatures": {
+        "header": "Creatures",
+        "description": "Design the living beings that inhabit your world"
+      },
+      "characters": {
+        "header": "Characters",
+        "description": "Create and manage the individuals in your story"
+      },
+      "rules": {
+        "header": "Rules",
+        "description": "Define the laws and systems that govern your world"
+      },
+      "nature": {
+        "header": "Nature",
+        "description": "Define the natural environment of your world"
+      },
+      "culture": {
+        "header": "Culture",
+        "description": "Define the societal aspects of your world"
+      },
+      "language": {
+        "header": "Language",
+        "description": "Define how beings communicate in your world"
+      },
+      "mythology_religion": {
+        "header": "Mythology & Religion",
+        "description": "Define the spiritual beliefs of your world"
+      },
+      "philosophy": {
+        "header": "Philosophy",
+        "description": "Define the intellectual frameworks of your world"
+      },
+      "tone_manner": {
+        "header": "Tone & Manner",
+        "description": "Define the emotional and stylistic aspects of your story"
+      },
+      "story_plot": {
+        "header": "Story & Plot",
+        "description": "Define the narrative structure of your story"
+      }
+    },
+    "submenu_items": {
+      "concept": {
+        "core_premise": "Core Premise",
+        "themes": "Themes",
+        "logline": "Logline",
+        "unique_selling_points": "Unique Selling Points"
+      },
+      "worldview": {
+        "prime_order": "Prime Order",
+        "societal_values": "Societal Values",
+        "moral_systems": "Moral Systems"
+      },
+      "time": {
+        "historical_timeline": "Historical Timeline",
+        "era_period": "Era/Period",
+        "time_mechanics": "Time Mechanics",
+        "significant_events": "Significant Events"
+      },
+      "space": {
+        "scale_size": "Scale & Size of World",
+        "geography": "Geography",
+        "locations": "Locations",
+        "maps": "Maps",
+        "environmental_features": "Environmental Features"
+      },
+      "creatures": {
+        "species": "Species",
+        "fauna": "Fauna",
+        "flora": "Flora",
+        "magical_beings": "Magical Beings",
+        "mutants": "Mutants",
+        "synthetic_organisms": "Synthetic Organisms"
+      },
+      "characters": {
+        "my_characters": "My Characters Management",
+        "character_relationships": "Character Relationships Management",
+        "tribe_factions": "Tribe & Factions Management",
+        "hero_journey_archetypes": "The Eight Hero's Journey Archetypes",
+        "hauge_categories": "Michael Hauge's Four Categories",
+        "jungian_archetypes": "Jungian Character Archetypes",
+        "mbti": "MBTI",
+        "enneagram": "Enneagram"
+      },
+      "rules": {
+        "prime_principle": "Prime Principle",
+        "world_rules": "World Rules",
+        "natural_laws": "Natural Laws",
+        "magic_systems": "Magic Systems",
+        "technology": "Technology",
+        "limitations": "Limitations"
+      },
+      "nature": {
+        "ecosystems": "Ecosystems",
+        "climate": "Climate",
+        "natural_resources": "Natural Resources",
+        "environmental_factors": "Environmental Factors"
+      },
+      "culture": {
+        "traditions": "Traditions",
+        "economic_system": "Economic System",
+        "arts": "Arts",
+        "social_structure": "Social Structure",
+        "politics": "Politics",
+        "education": "Education"
+      },
+      "language": {
+        "spoken_languages": "Spoken Languages",
+        "written_languages": "Written Languages",
+        "slang_dialects": "Slang & Dialects",
+        "communication_systems": "Communication Systems"
+      },
+      "mythology_religion": {
+        "deities": "Deities",
+        "creation_myths": "Creation Myths",
+        "religious_practices": "Religious Practices",
+        "afterlife_concepts": "Afterlife Concepts",
+        "supernatural_beings": "Supernatural Beings"
+      },
+      "philosophy": {
+        "ethical_systems": "Ethical Systems",
+        "schools_of_thought": "Schools of Thought",
+        "metaphysics": "Metaphysics",
+        "epistemology": "Epistemology"
+      },
+      "tone_manner": {
+        "mood": "Mood",
+        "style": "Style",
+        "voice": "Voice",
+        "themes_motifs": "Themes & Motifs"
+      },
+      "story_plot": {
+        "plot_structure": "Plot Structure",
+        "conflict": "Conflict",
+        "arcs": "Character & Story Arcs",
+        "key_events": "Key Events",
+        "subplots": "Subplots"
+      }
+    }
+  },
+  "ko": {
+    "top_navigation": {
+      "worldforge": "월드포지",
+      "forge_new_world": "새 세계 만들기",
+      "story_architect": "스토리 아키텍트",
+      "start_from_imagination": "상상에서 시작",
+      "load_project": "프로젝트 불러오기",
+      "save_project": "프로젝트 저장",
+      "intermediate_save": "AI 분석",
+      "story_weaving": "스토리 위빙"
+    },
+    "categories": {
+      "mode": "모드",
+      "project_management": "프로젝트 관리",
+      "special_function": "특수 기능"
+    },
+    "elementals": {
+      "concept": "컨셉",
+      "worldview": "세계관",
+      "time": "시간",
+      "space": "공간",
+      "creatures": "생물",
+      "characters": "캐릭터",
+      "rules": "규칙",
+      "nature": "자연",
+      "culture": "문화",
+      "language": "언어",
+      "mythology_religion": "신화/종교",
+      "philosophy": "철학",
+      "tone_manner": "톤 & 매너",
+      "story_plot": "스토리/플롯"
+    },
+    "ai_assistant": {
+      "title": "AI 어시스턴트",
+      "welcome_message": "월드포지에 오신 것을 환영합니다! 저는 AI 어시스턴트입니다. 스토리 세계를 만들고 발전시키는 데 도움을 드리겠습니다.",
+      "get_started": "왼쪽 사이드바에서 도구를 선택하거나 상단 메뉴 옵션 중 하나를 사용하여 시작하세요.",
+      "ask_anything": "무엇이든 물어보세요..."
+    },
+    "common_ui": {
+      "save": "저장",
+      "generate_with_ai": "AI로 생성",
+      "edit": "편집",
+      "delete": "삭제",
+      "start_writing": "여기에 이야기를 작성하세요...",
+      "select_elemental": "왼쪽 사이드바에서 원소를 선택하여 세계 구축을 시작하세요."
+    },
+    "submenu_headers": {
+      "concept": {
+        "header": "컨셉",
+        "description": "세계의 기초 아이디어 정의"
+      },
+      "worldview": {
+        "header": "세계관",
+        "description": "세계의 철학적 기반 정의"
+      },
+      "time": {
+        "header": "시간",
+        "description": "세계의 시간적 측면 정의"
+      },
+      "space": {
+        "header": "공간",
+        "description": "세계의 지리적 및 공간적 요소 생성"
+      },
+      "creatures": {
+        "header": "생물",
+        "description": "세계에 사는 생명체 디자인"
+      },
+      "characters": {
+        "header": "캐릭터",
+        "description": "이야기 속 개인 생성 및 관리"
+      },
+      "rules": {
+        "header": "규칙",
+        "description": "세계를 지배하는 법칙과 시스템 정의"
+      },
+      "nature": {
+        "header": "자연",
+        "description": "세계의 자연 환경 정의"
+      },
+      "culture": {
+        "header": "문화",
+        "description": "세계의 사회적 측면 정의"
+      },
+      "language": {
+        "header": "언어",
+        "description": "세계에서 생명체가 소통하는 방법 정의"
+      },
+      "mythology_religion": {
+        "header": "신화 & 종교",
+        "description": "세계의 영적 신념 정의"
+      },
+      "philosophy": {
+        "header": "철학",
+        "description": "세계의 지적 프레임워크 정의"
+      },
+      "tone_manner": {
+        "header": "톤 & 매너",
+        "description": "이야기의 감정적 및 스타일적 측면 정의"
+      },
+      "story_plot": {
+        "header": "스토리 & 플롯",
+        "description": "이야기의 서술 구조 정의"
+      }
+    },
+    "submenu_items": {
+      "concept": {
+        "core_premise": "핵심 전제",
+        "themes": "테마",
+        "logline": "로그라인",
+        "unique_selling_points": "독특한 판매 포인트"
+      },
+      "worldview": {
+        "prime_order": "주요 질서",
+        "societal_values": "사회적 가치",
+        "moral_systems": "도덕 체계"
+      },
+      "time": {
+        "historical_timeline": "역사적 타임라인",
+        "era_period": "시대/기간",
+        "time_mechanics": "시간 메커니즘",
+        "significant_events": "중요 사건"
+      },
+      "space": {
+        "scale_size": "세계의 규모 & 크기",
+        "geography": "지리",
+        "locations": "위치",
+        "maps": "지도",
+        "environmental_features": "환경적 특징"
+      },
+      "creatures": {
+        "species": "종",
+        "fauna": "동물군",
+        "flora": "식물군",
+        "magical_beings": "마법적 존재",
+        "mutants": "돌연변이",
+        "synthetic_organisms": "합성 유기체"
+      },
+      "characters": {
+        "my_characters": "내 캐릭터 관리",
+        "character_relationships": "캐릭터 관계 관리",
+        "tribe_factions": "부족 & 파벌 관리",
+        "hero_journey_archetypes": "영웅 여정의 8가지 원형",
+        "hauge_categories": "마이클 호그의 4가지 카테고리",
+        "jungian_archetypes": "융의 캐릭터 원형",
+        "mbti": "MBTI",
+        "enneagram": "에니어그램"
+      },
+      "rules": {
+        "prime_principle": "주요 원칙",
+        "world_rules": "세계 규칙",
+        "natural_laws": "자연법칙",
+        "magic_systems": "마법 시스템",
+        "technology": "기술",
+        "limitations": "제한사항"
+      },
+      "nature": {
+        "ecosystems": "생태계",
+        "climate": "기후",
+        "natural_resources": "천연 자원",
+        "environmental_factors": "환경적 요소"
+      },
+      "culture": {
+        "traditions": "전통",
+        "economic_system": "경제 시스템",
+        "arts": "예술",
+        "social_structure": "사회 구조",
+        "politics": "정치",
+        "education": "교육"
+      },
+      "language": {
+        "spoken_languages": "구어",
+        "written_languages": "문어",
+        "slang_dialects": "속어 & 방언",
+        "communication_systems": "의사소통 시스템"
+      },
+      "mythology_religion": {
+        "deities": "신",
+        "creation_myths": "창조 신화",
+        "religious_practices": "종교적 관행",
+        "afterlife_concepts": "사후세계 개념",
+        "supernatural_beings": "초자연적 존재"
+      },
+      "philosophy": {
+        "ethical_systems": "윤리 체계",
+        "schools_of_thought": "사상 학파",
+        "metaphysics": "형이상학",
+        "epistemology": "인식론"
+      },
+      "tone_manner": {
+        "mood": "분위기",
+        "style": "스타일",
+        "voice": "목소리",
+        "themes_motifs": "테마 & 모티프"
+      },
+      "story_plot": {
+        "plot_structure": "플롯 구조",
+        "conflict": "갈등",
+        "arcs": "캐릭터 & 스토리 아크",
+        "key_events": "주요 사건",
+        "subplots": "서브플롯"
+      }
+    }
+  },
+  "ja": {
+    "top_navigation": {
+      "worldforge": "ワールドフォージ",
+      "forge_new_world": "新しい世界を作成",
+      "story_architect": "ストーリーアーキテクト",
+      "start_from_imagination": "想像から始める",
+      "load_project": "プロジェクトを読み込む",
+      "save_project": "プロジェクトを保存",
+      "intermediate_save": "AI分析",
+      "story_weaving": "ストーリーウィービング"
+    },
+    "categories": {
+      "mode": "モード",
+      "project_management": "プロジェクト管理",
+      "special_function": "特別機能"
+    },
+    "elementals": {
+      "concept": "コンセプト",
+      "worldview": "世界観",
+      "time": "時間",
+      "space": "空間",
+      "creatures": "生物",
+      "characters": "キャラクター",
+      "rules": "ルール",
+      "nature": "自然",
+      "culture": "文化",
+      "language": "言語",
+      "mythology_religion": "神話/宗教",
+      "philosophy": "哲学",
+      "tone_manner": "トーン & マナー",
+      "story_plot": "ストーリー/プロット"
+    },
+    "ai_assistant": {
+      "title": "AIアシスタント",
+      "welcome_message": "ワールドフォージへようこそ！私はAIアシスタントです。あなたのストーリー世界の作成と発展をお手伝いします。",
+      "get_started": "左側のサイドバーからツールを選択するか、上部メニューのオプションを使用して開始してください。",
+      "ask_anything": "何でも質問してください..."
+    },
+    "common_ui": {
+      "save": "保存",
+      "generate_with_ai": "AIで生成",
+      "edit": "編集",
+      "delete": "削除",
+      "start_writing": "ここにストーリーを書き始めてください...",
+      "select_elemental": "左側のサイドバーからエレメンタルを選択して、世界の構築を始めてください。"
+    },
+    "submenu_headers": {
+      "concept": {
+        "header": "コンセプト",
+        "description": "世界の基本的なアイデアを定義する"
+      },
+      "worldview": {
+        "header": "世界観",
+        "description": "世界の哲学的基盤を定義する"
+      },
+      "time": {
+        "header": "時間",
+        "description": "世界の時間的側面を定義する"
+      },
+      "space": {
+        "header": "空間",
+        "description": "世界の地理的および空間的要素を作成する"
+      },
+      "creatures": {
+        "header": "生物",
+        "description": "世界に住む生き物をデザインする"
+      },
+      "characters": {
+        "header": "キャラクター",
+        "description": "ストーリーの個人を作成および管理する"
+      },
+      "rules": {
+        "header": "ルール",
+        "description": "世界を支配する法則とシステムを定義する"
+      },
+      "nature": {
+        "header": "自然",
+        "description": "世界の自然環境を定義する"
+      },
+      "culture": {
+        "header": "文化",
+        "description": "世界の社会的側面を定義する"
+      },
+      "language": {
+        "header": "言語",
+        "description": "世界での生物のコミュニケーション方法を定義する"
+      },
+      "mythology_religion": {
+        "header": "神話 & 宗教",
+        "description": "世界の精神的信念を定義する"
+      },
+      "philosophy": {
+        "header": "哲学",
+        "description": "世界の知的フレームワークを定義する"
+      },
+      "tone_manner": {
+        "header": "トーン & マナー",
+        "description": "ストーリーの感情的およびスタイル的側面を定義する"
+      },
+      "story_plot": {
+        "header": "ストーリー & プロット",
+        "description": "ストーリーの物語構造を定義する"
+      }
+    },
+    "submenu_items": {
+      "concept": {
+        "core_premise": "コアプレミス",
+        "themes": "テーマ",
+        "logline": "ログライン",
+        "unique_selling_points": "ユニークセリングポイント"
+      },
+      "worldview": {
+        "prime_order": "主要秩序",
+        "societal_values": "社会的価値観",
+        "moral_systems": "道徳システム"
+      },
+      "time": {
+        "historical_timeline": "歴史的タイムライン",
+        "era_period": "時代/期間",
+        "time_mechanics": "時間メカニクス",
+        "significant_events": "重要な出来事"
+      },
+      "space": {
+        "scale_size": "世界の規模 & サイズ",
+        "geography": "地理",
+        "locations": "場所",
+        "maps": "地図",
+        "environmental_features": "環境的特徴"
+      },
+      "creatures": {
+        "species": "種族",
+        "fauna": "動物相",
+        "flora": "植物相",
+        "magical_beings": "魔法的存在",
+        "mutants": "ミュータント",
+        "synthetic_organisms": "合成生物"
+      },
+      "characters": {
+        "my_characters": "マイキャラクター管理",
+        "character_relationships": "キャラクター関係管理",
+        "tribe_factions": "部族 & 派閥管理",
+       <response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>

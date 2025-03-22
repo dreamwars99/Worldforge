@@ -3,46 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorldForge</title>
+    <title>WorldForge - AI Storytelling Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='submenu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu_categories.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='multilingual.css') }}">
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="/"><h1>WorldForge</h1></a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <h2>Choose Your Path</h2>
-            <div class="button-container">
-                <div class="button-option">
-                    <a href="/new_project" class="button">
-                        <img src="{{ url_for('static', filename='images/white_book.png') }}" alt="New Project" class="button-image">
-                        New Project
-                    </a>
-                    <span class="tooltip">Create a new project from scratch.</span>
+<body data-lang="en">
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <nav class="top-nav">
+            <div class="logo-container">
+                <i class="fas fa-globe-americas"></i>
+                <span class="logo-text">Worldforge</span>
+            </div>
+            <div class="main-menu">
+                <!-- Mode Category -->
+                <div class="menu-category mode-category">
+                    <span class="menu-category-label">Mode</span>
+                    <button class="menu-btn" id="forge-new-world">
+                        <i class="fas fa-plus-circle"></i> Forge New World
+                    </button>
+                    <button class="menu-btn" id="story-architect">
+                        <i class="fas fa-drafting-compass"></i> Story Architect
+                    </button>
+                    <button class="menu-btn" id="start-imagination">
+                        <i class="fas fa-lightbulb"></i> Start from Imagination
+                    </button>
                 </div>
-                <div class="button-option">
-                    <a href="/chartflow" class="button">
-                        <img src="{{ url_for('static', filename='images/node.png') }}" alt="Chartflow" class="button-image">
-                        Chartflow - Step by Step
-                    </a>
-                    <span class="tooltip">Build your story gradually with AI guidance.</span>
+                
+                <!-- Project Management Category -->
+                <div class="menu-category project-category">
+                    <span class="menu-category-label">Project Management</span>
+                    <button class="menu-btn" id="load-project">
+                        <i class="fas fa-folder-open"></i> Load Project
+                    </button>
+                    <button class="menu-btn" id="save-project">
+                        <i class="fas fa-save"></i> Save Project
+                    </button>
+                    <button class="menu-btn" id="intermediate-save">
+                        <i class="fas fa-bookmark"></i> AI Analysis
+                    </button>
                 </div>
-                <div class="button-option">
-                    <a href="/start_from_imagination" class="button">
-                        <img src="{{ url_for('static', filename='images/bulb.png') }}" alt="Start from Imagination" class="button-image">
-                        Start from Imagination
-                    </a>
-                    <span class="tooltip">Create a vast story from a single spark.</span>
+                
+                <!-- Special Function Category -->
+                <div class="menu-category special-category">
+                    <span class="menu-category-label">Special Function</span>
+                    <button class="menu-btn" id="story-weaving">
+                        <i class="fas fa-magic"></i> Story Weaving
+                    </button>
                 </div>
             </div>
-        </section>
-  
+            <div class="language-selector">
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="ko">Korean</option>
+                    <option value="ja">Japanese</option>
+                    <option value="zh">Chinese</option>
+                </select>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Left Sidebar - 14 Elementals -->
+            <div class="elementals-sidebar">
+                <ul class="elementals-list">
+                    <li class="elemental-item" data-elemental="concept">
+                        <i class="fas fa-lightbulb"></i> Concept
+                    </li>
+                    <li class="elemental-item" data-elemental="worldview">
+                        <i class="fas fa-eye"></i> Worldview
+                    </li>
+                    <li class="elemental-item" data-elemental="time">
+                        <i class="fas fa-clock"></i> Time
+                    </li>
+                    <li class="elemental-item" data-elemental="space">
+                        <i class="fas fa-map-marked-alt"></i> Space
+                    </li>
+                    <li class="elemental-item" data-elemental="creatures">
+                        <i class="fas fa-dragon"></i> Creatures
+                    </li>
+                    <li class="elemental-item" data-elemental="characters">
+                        <i class="fas fa-user-friends"></i> Characters
+                    </li>
+                    <li class="elemental-item" data-elemental="rules">
+                        <i class="fas fa-gavel"></i> Rules
+                    </li>
+                    <li class="elemental-item" data-elemental="nature">
+                        <i class="fas fa-leaf"></i> Nature
+                    </li>
+                    <li class="elemental-item" data-elemental="culture">
+                        <i class="fas fa-theater-masks"></i> Culture
+                    </li>
+                    <li class="elemental-item" data-elemental="language">
+                        <i class="fas fa-language"></i> Language
+                    </li>
+                    <li class="elemental-item" data-elemental="mythology-religion">
+                        <i class="fas fa-pray"></i> Mythology/Religion
+                    </li>
+                    <li class="elemental-item" data-elemental="philosophy">
+                        <i class="fas fa-brain"></i> Philosophy
+                    </li>
+                    <li class="elemental-item" data-elemental="tone-manner">
+                        <i class="fas fa-music"></i> Tone & Manner
+                    </li>
+                    <li class="elemental-item" data-elemental="story-plot">
+                        <i class="fas fa-book"></i> Story/Plot
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Submenu Panel (appears when elemental is selected) -->
+            <div class="submenu-panel" id="submenu-panel">
+                <!-- Submenu content will be dynamically loaded here -->
+            </div>
+
+            <!-- Central Content Area -->
+            <div class="content-area">
+                <div class="elemental-workspace">
+                    <!-- This area will change based on selected elemental and submenu -->
+                    <div class="default-message">
+                        <h2>Start writing your story here...</h2>
+                        <p>Select an elemental from the left sidebar to begin crafting your world.</p>
+                    </div>
+                </div>
+                <div class="story-editor">
+                    <textarea id="story-text" placeholder="Start writing your story here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - AI Assistant -->
+            <div class="ai-assistant-panel">
+                <div class="assistant-header">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Assistant</h3>
+                </div>
+                <div class="assistant-messages">
+                    <div class="assistant-message">
+                        <p>Welcome to Worldforge! I'm your AI assistant. I'll help you create and develop your story world.</p>
+                        <p>Select a tool from the left sidebar or use one of the top menu options to get started.</p>
+                    </div>
+                </div>
+                <div class="assistant-input">
+                    <input type="text" id="assistant-prompt" placeholder="Ask me anything...">
+                    <button id="send-prompt">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates for Submenus (Hidden) -->
+    <template id="concept-submenu">
+        <div class="submenu-header">
+            <h3>Concept</h3>
+            <p>Define the foundational ideas of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="core-premise">Core Premise</li>
+            <li class="submenu-item" data-submenu="themes">Themes</li>
+            <li class="submenu-item" data-submenu="logline">Logline</li>
+            <li class="submenu-item" data-submenu="unique-selling-points">Unique Selling Points</li>
+        </ul>
+    </template>
+
+    <template id="worldview-submenu">
+        <div class="submenu-header">
+            <h3>Worldview</h3>
+            <p>Define the philosophical underpinnings of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="prime-order">Prime Order</li>
+            <li class="submenu-item" data-submenu="societal-values">Societal Values</li>
+            <li class="submenu-item" data-submenu="moral-systems">Moral Systems</li>
+        </ul>
+    </template>
+
+    <template id="time-submenu">
+        <div class="submenu-header">
+            <h3>Time</h3>
+            <p>Define the temporal aspects of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="historical-timeline">Historical Timeline</li>
+            <li class="submenu-item" data-submenu="era-period">Era/Period</li>
+            <li class="submenu-item" data-submenu="time-mechanics">Time Mechanics</li>
+            <li class="submenu-item" data-submenu="significant-events">Significant Events</li>
+        </ul>
+    </template>
+
+    <template id="space-submenu">
+        <div class="submenu-header">
+            <h3>Space</h3>
+            <p>Create the geographical and spatial elements of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="scale-size">Scale & Size of World</li>
+            <li class="submenu-item" data-submenu="geography">Geography</li>
+            <li class="submenu-item" data-submenu="locations">Locations</li>
+            <li class="submenu-item" data-submenu="maps">Maps</li>
+            <li class="submenu-item" data-submenu="environmental-features">Environmental Features</li>
+        </ul>
+    </template>
+
+    <template id="creatures-submenu">
+        <div class="submenu-header">
+            <h3>Creatures</h3>
+            <p>Design the living beings that inhabit your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="species">Species</li>
+            <li class="submenu-item" data-submenu="fauna">Fauna</li>
+            <li class="submenu-item" data-submenu="flora">Flora</li>
+            <li class="submenu-item" data-submenu="magical-beings">Magical Beings</li>
+            <li class="submenu-item" data-submenu="mutants">Mutants</li>
+            <li class="submenu-item" data-submenu="synthetic-organisms">Synthetic Organisms</li>
+        </ul>
+    </template>
+
+    <template id="characters-submenu">
+        <div class="submenu-header">
+            <h3>Characters</h3>
+            <p>Create and manage the individuals in your story</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="my-characters">My Characters Management</li>
+            <li class="submenu-item" data-submenu="character-relationships">Character Relationships Management</li>
+            <li class="submenu-item" data-submenu="tribe-factions">Tribe & Factions Management</li>
+            <li class="submenu-item" data-submenu="hero-journey-archetypes">The Eight Hero's Journey Archetypes</li>
+            <li class="submenu-item" data-submenu="hauge-categories">Michael Hauge's Four Categories</li>
+            <li class="submenu-item" data-submenu="jungian-archetypes">Jungian Character Archetypes</li>
+            <li class="submenu-item" data-submenu="mbti">MBTI</li>
+            <li class="submenu-item" data-submenu="enneagram">Enneagram</li>
+        </ul>
+    </template>
+
+    <template id="rules-submenu">
+        <div class="submenu-header">
+            <h3>Rules</h3>
+            <p>Define the laws and systems that govern your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="prime-principle">Prime Principle</li>
+            <li class="submenu-item" data-submenu="world-rules">World Rules</li>
+            <li class="submenu-item" data-submenu="natural-laws">Natural Laws</li>
+            <li class="submenu-item" data-submenu="magic-systems">Magic Systems</li>
+            <li class="submenu-item" data-submenu="technology">Technology</li>
+            <li class="submenu-item" data-submenu="limitations">Limitations</li>
+        </ul>
+    </template>
+
+    <!-- Adding missing templates for the remaining elementals -->
+    <template id="nature-submenu">
+        <div class="submenu-header">
+            <h3>Nature</h3>
+            <p>Define the natural environment of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="ecosystems">Ecosystems</li>
+            <li class="submenu-item" data-submenu="climate">Climate</li>
+            <li class="submenu-item" data-submenu="natural-resources">Natural Resources</li>
+            <li class="submenu-item" data-submenu="environmental-factors">Environmental Factors</li>
+        </ul>
+    </template>
+
+    <template id="culture-submenu">
+        <div class="submenu-header">
+            <h3>Culture</h3>
+            <p>Define the societal aspects of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="traditions">Traditions</li>
+            <li class="submenu-item" data-submenu="economic-system">Economic System</li>
+            <li class="submenu-item" data-submenu="arts">Arts</li>
+            <li class="submenu-item" data-submenu="social-structure">Social Structure</li>
+            <li class="submenu-item" data-submenu="politics">Politics</li>
+            <li class="submenu-item" data-submenu="education">Education</li>
+        </ul>
+    </template>
+
+    <template id="language-submenu">
+        <div class="submenu-header">
+            <h3>Language</h3>
+            <p>Define how beings communicate in your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="spoken-languages">Spoken Languages</li>
+            <li class="submenu-item" data-submenu="written-languages">Written Languages</li>
+            <li class="submenu-item" data-submenu="slang-dialects">Slang & Dialects</li>
+            <li class="submenu-item" data-submenu="communication-systems">Communication Systems</li>
+        </ul>
+    </template>
+
+    <template id="mythology-religion-submenu">
+        <div class="submenu-header">
+            <h3>Mythology & Religion</h3>
+            <p>Define the spiritual beliefs of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="deities">Deities</li>
+            <li class="submenu-item" data-submenu="creation-myths">Creation Myths</li>
+            <li class="submenu-item" data-submenu="religious-practices">Religious Practices</li>
+            <li class="submenu-item" data-submenu="afterlife-concepts">Afterlife Concepts</li>
+            <li class="submenu-item" data-submenu="supernatural-beings">Supernatural Beings</li>
+        </ul>
+    </template>
+
+    <template id="philosophy-submenu">
+        <div class="submenu-header">
+            <h3>Philosophy</h3>
+            <p>Define the intellectual frameworks of your world</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="ethical-systems">Ethical Systems</li>
+            <li class="submenu-item" data-submenu="schools-of-thought">Schools of Thought</li>
+            <li class="submenu-item" data-submenu="metaphysics">Metaphysics</li>
+            <li class="submenu-item" data-submenu="epistemology">Epistemology</li>
+        </ul>
+    </template>
+
+    <template id="tone-manner-submenu">
+        <div class="submenu-header">
+            <h3>Tone & Manner</h3>
+            <p>Define the emotional and stylistic aspects of your story</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="mood">Mood</li>
+            <li class="submenu-item" data-submenu="style">Style</li>
+            <li class="submenu-item" data-submenu="voice">Voice</li>
+            <li class="submenu-item" data-submenu="themes-motifs">Themes & Motifs</li>
+        </ul>
+    </template>
+
+    <template id="story-plot-submenu">
+        <div class="submenu-header">
+            <h3>Story & Plot</h3>
+            <p>Define the narrative structure of your story</p>
+        </div>
+        <ul class="submenu-list">
+            <li class="submenu-item" data-submenu="plot-structure">Plot Structure</li>
+            <li class="submenu-item" data-submenu="conflict">Conflict</li>
+            <li class="submenu-item" data-submenu="arcs">Character & Story Arcs</li>
+            <li class="submenu-item" data-submenu="key-events">Key Events</li>
+            <li class="submenu-item" data-submenu="subplots">Subplots</li>
+        </ul>
+    </template>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='translation-loader.js') }}"></script>
+    <script src="{{ url_for('static', filename='submenu.js') }}"></script>
+    <script src="{{ url_for('static', filename='tooltips.js') }}"></script>
+    <script src="{{ url_for('static', filename='imagination.js') }}"></script>
+</body>
+</html>

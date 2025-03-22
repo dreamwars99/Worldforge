@@ -1,0 +1,105 @@
+// CSS adjustments for multilingual support
+// This file contains styles to handle different text lengths across languages
+
+/* General text container adjustments */
+[data-lang="ko"] .menu-btn,
+[data-lang="ja"] .menu-btn,
+[data-lang="zh"] .menu-btn {
+  /* Slightly reduce padding for languages that may have longer text */
+  padding: 0.25rem 0.5rem;
+  /* Allow text to wrap if necessary */
+  white-space: normal;
+  /* Ensure minimum width for buttons */
+  min-width: 80px;
+}
+
+/* Adjust category labels for different languages */
+[data-lang="ko"] .menu-category-label,
+[data-lang="ja"] .menu-category-label,
+[data-lang="zh"] .menu-category-label {
+  /* Reduce font size slightly for languages with longer words */
+  font-size: 0.65rem;
+  /* Ensure minimum width */
+  min-width: 60px;
+}
+
+/* Adjust submenu items for different languages */
+[data-lang="ko"] .submenu-item,
+[data-lang="ja"] .submenu-item,
+[data-lang="zh"] .submenu-item {
+  /* Allow text to wrap if necessary */
+  white-space: normal;
+  /* Ensure proper line height for wrapped text */
+  line-height: 1.3;
+}
+
+/* Adjust elemental sidebar items for different languages */
+[data-lang="ko"] .elemental-item,
+[data-lang="ja"] .elemental-item,
+[data-lang="zh"] .elemental-item {
+  /* Allow text to wrap if necessary */
+  white-space: normal;
+  /* Ensure proper line height for wrapped text */
+  line-height: 1.3;
+  /* Adjust padding for potential wrapping */
+  padding: 0.6rem 0.8rem;
+}
+
+/* Adjust workspace headers for different languages */
+[data-lang="ko"] .elemental-workspace h2,
+[data-lang="ja"] .elemental-workspace h2,
+[data-lang="zh"] .elemental-workspace h2 {
+  /* Allow text to wrap if necessary */
+  white-space: normal;
+  /* Ensure proper line height for wrapped text */
+  line-height: 1.3;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 992px) {
+  [data-lang] .menu-btn {
+    /* Further reduce padding on smaller screens */
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+  }
+  
+  [data-lang] .menu-category-label {
+    /* Smaller font on smaller screens */
+    font-size: 0.6rem;
+    padding: 2px 4px;
+  }
+}
+
+/* Ensure proper text direction for all languages */
+[data-lang="en"],
+[data-lang="ko"],
+[data-lang="ja"],
+[data-lang="zh"] {
+  direction: ltr;
+}
+
+/* Specific adjustments for Japanese and Chinese which may need more space */
+[data-lang="ja"] .menu-btn,
+[data-lang="zh"] .menu-btn {
+  /* Japanese and Chinese characters may need more space */
+  letter-spacing: 0.05em;
+}
+
+/* Ensure proper font for each language */
+[data-lang="ko"] {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Nanum Gothic', sans-serif;
+}
+
+[data-lang="ja"] {
+  font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS PGothic', sans-serif;
+}
+
+[data-lang="zh"] {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'SimHei', sans-serif;
+}
+
+/* Ensure tooltips adjust to content */
+.tooltip {
+  max-width: 300px;
+  white-space: normal;
+}

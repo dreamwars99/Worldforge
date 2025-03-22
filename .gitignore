@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 *.exe
 *.log
+*.zip
+*.jpg
+*.png
+pic/
+projects/
